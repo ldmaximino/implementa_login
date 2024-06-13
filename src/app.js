@@ -2,9 +2,9 @@
 import express from "express";
 import "dotenv/config";
 import handlebars from "express-handlebars";
-import cookieParser from 'cookie-parser';
-import session from 'express-session';
-import MongoStore from 'connect-mongo';
+import cookieParser from "cookie-parser";
+import session from "express-session";
+import MongoStore from "connect-mongo";
 
 //Local imports
 import products_router from "./routes/product_router.js";
@@ -22,16 +22,16 @@ const PORT = process.env.PORT || 5003;
 //Store Config definition
 const storeConfig = {
   store: MongoStore.create({
-      mongoUrl: process.env.URI_MONGODB,
-      crypto: { secret: process.env.SECRET_KEY },
-      ttl: 60,
-      autoRemove: 'interval',
-      autoRemoveInterval: 2
+    mongoUrl: process.env.URI_MONGODB,
+    crypto: { secret: process.env.SECRET_KEY },
+    ttl: 180,
+    autoRemove: "interval",
+    autoRemoveInterval: 5, //delete expired sessions in mongodb every 5 minutes
   }),
   secret: process.env.SECRET_KEY,
   resave: true,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 }
+  cookie: { maxAge: 180000 },
 };
 
 //app express
@@ -39,10 +39,12 @@ const app = express();
 
 //Middlewares
 app.use(express.static(__dirname + "/public"));
+app.use('/cart', express.static(__dirname + '/public')); // I had to add this middleware so that the /cart/:cid path takes the css file. If you comment on this line you will see that the cart css does not work
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session(storeConfig));
+
 
 //Handlebars Engine Definition
 app.engine("hbs", handlebars.engine({ extname: "hbs" }));

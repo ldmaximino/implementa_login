@@ -100,7 +100,7 @@ export default class CartDaoMongoDB {
     try {
       const deleteAllProducts = await CartModel.findOneAndUpdate(
         { _id: cid },
-        { $set: { products: [] }},
+        { $set: { products: [] } },
         { new: true }
       );
       return { status: "All products deleted from cart", deleteAllProducts };

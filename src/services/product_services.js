@@ -22,9 +22,9 @@ const initializeProductDao = async () => {
 // Call the function to initialize 'productDao'
 await initializeProductDao();
 
-export const getAllProducts = async (page,limit,category,stock,sort) => {
+export const getAllProducts = async (page, limit, category, stock, sort) => {
   try {
-    return await productDao.getAllProducts(page,limit,category,stock,sort);
+    return await productDao.getAllProducts(page, limit, category, stock, sort);
   } catch (error) {
     throw new Error(error);
   }

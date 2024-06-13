@@ -8,14 +8,14 @@ import { validateLogin } from "../middlewares/validate_login.js";
 
 const router = Router();
 
-router.get("/", validateLogin,controller.getAllProducts);
+router.get("/", validateLogin, controller.getAllProducts);
 
-router.get("/:pid", validateLogin,controller.getProductById);
+router.get("/:pid", validateLogin, controller.getProductById);
 
-router.post("/", validateLogin,productValidator, controller.createProduct);
+router.post("/", validateLogin, productValidator, controller.createProduct);
 
-router.put("/:pid", validateLogin,productValidator, controller.updateProduct);
+router.put("/:pid", validateLogin, productValidator, controller.updateProduct);
 
-router.delete("/:pid", validateLogin,controller.deleteProduct);
+router.delete("/:pid", validateLogin, controller.deleteProduct);
 
 export default router;

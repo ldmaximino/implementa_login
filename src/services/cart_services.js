@@ -63,9 +63,9 @@ export const updateCartWithProducts = async (cid, object) => {
   }
 };
 
-export const updateProductQuantity = async (cid,pid,quantity) => {
+export const updateProductQuantity = async (cid, pid, quantity) => {
   try {
-    return await cartDao.updateProductQuantity(cid,pid,quantity);
+    return await cartDao.updateProductQuantity(cid, pid, quantity);
   } catch (error) {
     throw new Error(error);
   }
