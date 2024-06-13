@@ -1,0 +1,238 @@
+
+.products-container {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size:2rem;
+    font-weight: bold;
+    color:rgb(122, 18, 18);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin:20px 40px;
+}
+
+.subtitle {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout {
+    font-size:1rem;
+    font-weight: bold;
+    margin-left:50px;
+    color:rgb(198, 13, 13);
+    background-color: gray;
+    padding:5px;
+    border:1px solid white;
+    border-radius:10px;
+}
+
+.logout:hover {
+    cursor:pointer;
+    color:gray;
+    background-color: white;
+}
+
+.user-data {
+    font-size:1.3rem;
+    color:#d64d09;
+    margin-right: 50px;
+}
+
+.product-card {
+    width: 300px;
+    height: 250px;
+    background-color: rgb(233, 233, 224);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.title {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+}
+
+.category {
+    font-size: 14px;
+    color: #777;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.stock {
+    font-size: 14px;
+    font-weight: bold;
+    color: #3f3a3a;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ee2d17;
+    margin-top: 10px;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Cart */
+.cart-title {
+    color:red;
+}
+
+.cart-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: red;
+}
+
+.item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
+.item > div {
+    margin-bottom: 5px;
+}
+
+.title {
+    font-weight: bold;
+}
+
+.quantity, .price {
+    color: #333;
+}
+
+/* Register Form */
+.register-login-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* Styles for the form */
+form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin: 0 auto;
+}
+
+/* Styles for the form title */
+.register-login-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Styles for the labels */
+.label-user {
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+    display: block;
+    font-weight: bold;
+    background-color:  #fff;
+}
+
+/* Styles for the inputs */
+.input-user {
+    width: calc(100%);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+/* Styles for the register button */
+.btn-register-login {
+    background-color: #0f429b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.btn-register-login:hover {
+    background-color: #052b6d;
+}
+
+/* New User */
+.new-user {
+    width:200px;
+    text-align: center;
+    margin-top:50px;
+}
+
+/* Login */
+.error-login {
+    margin-top:100px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.error-login button {
+    width:150px;
+    background-color: #052b6d;
+}
